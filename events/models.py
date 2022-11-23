@@ -23,7 +23,7 @@ class User(models.Model):
 class EventPlanner(models.Model):
     name = models.CharField(max_length=30)
     location = models.CharField(max_length=50)
-    photo = models.ImageField(null=True, blank=True, upload_to='Events/images/')
+    photo = models.ImageField(null=True, blank=True, upload_to='eventPlanner/')
     ruc = models.CharField(max_length=11)
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -39,7 +39,7 @@ class Category(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=80)
-    photo = models.ImageField(null=True, blank=True, upload_to='Events/images/')
+    photo = models.ImageField(null=True, blank=True, upload_to='event/')
     description = models.TextField()
     dateEvent = models.DateField(auto_now_add=False, auto_now=False, blank=True)
     price = models.CharField(max_length=10)
